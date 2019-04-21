@@ -1,0 +1,71 @@
+1.Git安装与简单配置
+git-scm.com 下载 git
+安装双击打打 一直下一步 完成即可
+安装成功后可以通过 git version 查看版本号
+
+2.git自动完成功能 
+	输入 git co  然后按tab 
+	输入 git c 回车
+3.Git最基本的配置
+	配置用户信息
+	添加
+	git config --global user.name "wuya"
+	git config --global user.email adam8831@163.com
+	git config --list 检查配置信息
+	修改用户
+	git config --global user.name waya2
+	删除用户
+	git config --global --unset user.name waya
+4.给命令取别名 git config --global alias.别名  命令 
+	git config --global alias.ve version
+	
+5.获得帮助 
+	git help config 查看文档
+	git config --help
+	git help 命令
+	
+6Git配置的三个级别
+1.git config --system   权限低
+2.git config  --global   权限中，针对当前用户
+3.git  config    --local  权限是最高的，针对当前仓库
+
+git config --list 查看所有环境变量信息
+git config --system --list
+git config --global --list 查看当前用户配置的信息
+git config --local --list 
+7.git工作流程
+	工作区
+	暂存区
+	git仓库
+8本地操作
+	a初始化仓库 两种方式
+		1.
+		2.
+	b 向仓库中添加数据 需要经过3个流程 
+	1.向工作区添加文件
+	2.提交到暂存区 git add 文件名 提交到暂存区
+	3.提交到git仓库 git commit  -m "描述"
+	
+	c.修改文件信息
+		1.修改内容
+		2.提交到暂存区 git add 文件名 提交到暂存区
+		3.提交到git仓库 git commit  -m "描述"
+	e.删除文件
+		1. rm 文件名 
+		2. git  rm 文件名
+		3. git commit -m "delete a1.txt"
+	f.恢复文件
+		1.查看提交的版本信息 git log 
+		2.git checkout 版本id 文件名
+		 git  checkout deb72d3caf27bc133ce a1.txt
+		3恢复到上一个版本：git reset --hard HEAD^
+	g.撤销修改工作区的代码
+		git checkout 文件名
+	把本机电脑上git仓库代码 上传到 github管理中心
+	git remote add origin https://github.com/adam8831/test01.git
+	git push -u origin master
+	如果以后修改了代码 ，直接通过 git push 推
+	
+	git pull 拉 把github修改的版本信息更新到本机
+	复制 git clone 地址
+	git clone https://github.com/adam8831/test03.git
